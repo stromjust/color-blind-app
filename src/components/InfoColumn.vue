@@ -1,7 +1,7 @@
 <template>
   <div id="infoPanel">
       <div class="upperPanel">
-		  <button type="button" name="button">Background</button> <!-- todo -->
+		  <theme-switch></theme-switch>
 		  <input type="text" name="" value="">
       </div>
 	  <div class="lowerPanel">
@@ -44,6 +44,7 @@
 
 <script>
 	import { eventBus } from '../main'
+	import ThemeSwitch from './ThemeSwitch.vue'
 
 	export default {
         data: () => ({
@@ -63,17 +64,23 @@
 					eventBus.$emit('protanomalyRatioChanged', this.protanomalyRatio);
 				}
 			}
+		},
+		components: {
+		  'theme-switch': ThemeSwitch
 		}
     }
 </script>
 
 <style scoped>
+
     #infoPanel {
         width: 250px;
     }
 
 	.upperPanel {
-		text-align: center;
+		display: flex;
+		flex-flow: column;
+		align-items: flex-end;
 		height: 242px;
 	}
 
@@ -103,7 +110,7 @@
 	}
 
 
-	/* remove default */
+	/* Slider: remove default */
 	.slider {
 		-webkit-appearance: none;
 		width: 80%;
@@ -119,7 +126,7 @@
 	}
 
 
-	/* slider thumb */
+	/* Slider: thumb */
 	.slider::-webkit-slider-thumb {
 		background: #696985;
 		-webkit-appearance: none;
@@ -145,7 +152,7 @@
 	}
 
 
-	/* slider track */
+	/* Slider: track */
 	.slider::-webkit-slider-runnable-track {
 		width: 100%;
 		height: 6px;

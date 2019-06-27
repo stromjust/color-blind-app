@@ -13,3 +13,22 @@ h1, h2 {
     overflow: auto;
 	margin-bottom: 20px;
 }
+
+.darkTheme {
+	background-color: #161616;
+	color: #FAFAFA;
+}
+
+.darkTheme .colorButton {
+	margin: 0 5px;
+	filter: invert(.95) grayscale(.7);
+	user-select: none;
+}
+
+.darkTheme .colorButton:hover {
+	filter: invert(.95) grayscale(0);
+}
+
+.darkTheme .colorButton:active {
+	filter: invert(.95) contrast(3);
+}
