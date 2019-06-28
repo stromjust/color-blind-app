@@ -1,6 +1,7 @@
 <template>
   <div id="infoPanel">
       <div class="upperPanel">
+		  <p class="disclaimer">note: tritanopia (0.01%) and tritanomaly (0.01%) is <em>work in progress</em>.</p>
 		  <theme-switch></theme-switch>
 		  <color-text></color-text>
       </div>
@@ -11,8 +12,8 @@
 			  <div><span>0.66%</span></div>
 			  <div><span>0.59%</span></div>
 			  <div><span>0.56%</span></div>
-			  <div><span>0.01%</span></div>
-			  <div><span>0.01%</span></div>
+			  <!-- <div><span>0.01%</span></div>
+			       <div><span>0.01%</span></div> -->
 		  </div>
 		  <div class="name">
 			  <div><span>normal vision</span></div>
@@ -32,11 +33,11 @@
 			  </div>
 			  <div><span>protanopia</span></div>
 			  <div><span>deuteranopia</span></div>
-			  <div><span>tritanopia</span></div>
-			  <div>
+			  <!-- <div><span>tritanopia</span></div>
+			   	   <div>
 				  <span>tritanomaly</span>
 				  <input type="range" min="1" max="100" value="50" class="slider">
-			  </div>
+			  </div> -->
 		  </div>
 	  </div>
   </div>
@@ -90,6 +91,10 @@
 	.lowerPanel {
 		display: flex;
 
+	}
+
+	.disclaimer {
+		margin-bottom: auto;
 	}
 
 	.percentage {
