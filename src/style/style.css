@@ -2,6 +2,16 @@ html, body {
     margin: 0;
     font-family: 'Cambria';
 	color: #444343;
+	
+}
+
+#colorApp {
+	width: 1235px;
+}
+
+.appContainer {
+	display: flex;
+	justify-content: center;
 }
 
 h1, h2 {

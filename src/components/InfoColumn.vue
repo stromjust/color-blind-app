@@ -2,7 +2,7 @@
   <div id="infoPanel">
       <div class="upperPanel">
 		  <theme-switch></theme-switch>
-		  <input type="text" name="" value="">
+		  <color-text></color-text>
       </div>
 	  <div class="lowerPanel">
 		  <div class="percentage">
@@ -45,6 +45,7 @@
 <script>
 	import { eventBus } from '../main'
 	import ThemeSwitch from './ThemeSwitch.vue'
+	import ColorText from './ColorText.vue'
 
 	export default {
         data: () => ({
@@ -66,7 +67,8 @@
 			}
 		},
 		components: {
-		  'theme-switch': ThemeSwitch
+		  'theme-switch': ThemeSwitch,
+		  'color-text': ColorText
 		}
     }
 </script>
@@ -80,12 +82,14 @@
 	.upperPanel {
 		display: flex;
 		flex-flow: column;
-		align-items: flex-end;
+		align-items: center;
+		justify-content: flex-end;
 		height: 242px;
 	}
 
 	.lowerPanel {
 		display: flex;
+
 	}
 
 	.percentage {

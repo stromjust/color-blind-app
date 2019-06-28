@@ -9,18 +9,20 @@
 					alt="Remove color column" class="colorButton" draggable="false">
 		</div>
 
-        <color-column v-for="column in colorColumnCount"></color-column>
+        <color-column :text='text' v-for="column in colorColumnCount"></color-column>
     </div>
 </template>
 
 <script>
     import ColorColumn from './components/ColorColumn.vue'
     import InfoColumn from './components/InfoColumn.vue'
+	import { eventBus } from './main'
 
     export default {
         data: () => ({
 			colorColumnCount: 1,
-			colorColumnCountMax: 4
+			colorColumnCountMax: 4,
+			text: 'color'
 		}),
         components: {
           'color-column': ColorColumn,
@@ -37,6 +39,11 @@
 					this.colorColumnCount -= 1;
 				}
 			}
+		},
+		created() {
+			eventBus.$on('textChanged', (text) => {
+				this.text = text;
+			});
 		}
     }
 </script>

@@ -4,6 +4,6 @@ import App from './App.vue'
 export const eventBus = new Vue();
 
 new Vue({
-  el: '#app',
+  el: '#colorApp',
   render: h => h(App)
 })

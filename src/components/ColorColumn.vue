@@ -1,11 +1,11 @@
 <template>
     <div class="column">
         <color-picker :value="color" @input="changeColor"></color-picker>
-        <div :style="{'background-color': normalColor}" class="color-block"></div>
-        <div :style="{'background-color': deuteranomalyColor}" class="color-block"></div>
-        <div :style="{'background-color': protanomalyColor}" class="color-block"></div>
-		<div :style="{'background-color': protanopiaColor}" class="color-block"></div>
-		<div :style="{'background-color': deuteranopiaColor}" class="color-block"></div>
+        <div :style="{'background-color': normalColor}" class="color-block">{{ text }}</div>
+        <div :style="{'background-color': deuteranomalyColor}" class="color-block">{{ text }}</div>
+        <div :style="{'background-color': protanomalyColor}" class="color-block">{{ text }}</div>
+		<div :style="{'background-color': protanopiaColor}" class="color-block">{{ text }}</div>
+		<div :style="{'background-color': deuteranopiaColor}" class="color-block">{{ text }}</div>
     </div>
 </template>
 
@@ -16,15 +16,13 @@
 
     export default {
         data:() => ({
-            color: {
-				r: Math.floor(Math.random() * 156 + 100),
-				g: Math.floor(Math.random() * 156 + 100),
-				b: Math.floor(Math.random() * 156 + 100),
-				a: 1
-			},
+            color: { b: 0, r: 0, g: 0, a: 1 },
 			protanomalyRatio: 75,
-			deuteranomalyRatio: 75
+			deuteranomalyRatio: 75,
         }),
+		props: [
+			'text',
+		],
         methods: {
             changeColor(color) {
                 this.color = color.rgba;
@@ -71,6 +69,11 @@
 			eventBus.$on('protanomalyRatioChanged', (ratio) => {
 				this.protanomalyRatio = ratio;
 			});
+
+			let colors = ['r', 'g', 'b'];
+			this.color[ colors.splice( Math.floor(Math.random() * 3), 1 )[0] ] = Math.floor(Math.random() * 56 + 200); // 200 - 255
+			this.color[ colors.splice( Math.floor(Math.random() * 2), 1 )[0] ] = Math.floor(Math.random() * 36); // 0 - 35
+			this.color[ colors[0] ] = Math.floor(Math.random() * 256); // 0 - 255
 		},
         mixins: [ColorMath]
     }
@@ -83,6 +86,9 @@
     }
 
     .color-block {
+		display: flex;
+		justify-content: center;
+		align-items: center;
         margin-top: 20px;
         width: 100%;
         height: 100px;
