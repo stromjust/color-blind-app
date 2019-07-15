@@ -2,7 +2,8 @@ html, body {
     margin: 0;
     font-family: 'Cambria';
 	color: #444343;
-	
+	background-color: #fff;
+
 }
 
 #colorApp {
@@ -41,4 +42,18 @@ h1, h2 {
 
 .darkTheme .colorButton:active {
 	filter: invert(.95) contrast(3);
+}
+
+.vc-chrome {
+  box-shadow: 0 0 1px rgba(0,0,0,.5) !important;
+  width: 200px !important;
+  border-top: 1px solid rgb(66,66,66) !important;
+}
+
+.vc-material {
+  width: 98px;
+  height: 98px;
+  padding: 5px !important;
+  border-radius: 2px;
+  box-shadow: 0 0 1px rgba(0,0,0,.5) !important;
 }

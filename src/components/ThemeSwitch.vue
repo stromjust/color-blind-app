@@ -8,6 +8,8 @@
 
 </template>
 <script>
+	import { eventBus } from '../main'
+
 	export default {
 		data: () => ({
 			isDark: false,
@@ -24,6 +26,8 @@
 					document.body.className = '';
 					this.mode = 'dark';
 				}
+				let color = getComputedStyle(document.querySelector('body')).backgroundColor;
+				eventBus.$emit('backgroundChanged', color);
 			}
 		}
 	}

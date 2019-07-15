@@ -1,0 +1,22 @@
+{
+	"name": "ColorBlindApp - Design for Accessibility",
+	"short_name": "ColorBlindApp",
+	"start_url": "/index.html",
+	"display": "standalone",
+	"background_color": "#EAEC67",
+	"theme_color": "#9B9E2A",
+	"lang": "en-US",
+	"orientation": "portrait-primary",
+	"icons": [
+		{
+			"src": "/src/assets/logo.png",
+			"type": "image/png",
+			"sizes": "48x48"
+		},
+		{
+			"src": "/src/assets/logo144.png",
+			"type": "image/png",
+			"sizes": "144x144"
+		}
+	]
+}

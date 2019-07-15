@@ -61,6 +61,7 @@
 		margin: 0 5px;
 		filter: grayscale(.7);
 		user-select: none;
+		cursor: pointer;
 	}
 	.colorButton:hover {
 		filter: grayscale(0);
