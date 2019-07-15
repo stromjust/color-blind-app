@@ -3,31 +3,31 @@
         <color-picker :value="color" @input="changeColor"></color-picker>
         <div :style="{'background-color': getBoxRGBA(normalColor)}" class="color-block">
 			<img :src='contrastIndicator(normalColor)' alt="Contrast indicator" class="contrastTick" draggable="false">
-			<span :style="{'color': getTextRGBA(textColor)}" >{{ contrastRatio(textColor, alphaBlending(normalColor)) }}</span>
+			<span :style="{'color': getTextRGBA(textColor)}" >{{ text }}</span>
 		</div>
         <div :style="{'background-color': getBoxRGBA(deuteranomalyColor)}" class="color-block">
 			<img :src='contrastIndicator(deuteranomalyColor)' alt="Contrast indicator" class="contrastTick" draggable="false">
-			<span :style="{'color': getTextRGBA(textColor)}" >{{ contrastRatio(textColor, alphaBlending(deuteranomalyColor)) }}</span>
+			<span :style="{'color': getTextRGBA(textColor)}" >{{ text }}</span>
 		</div>
         <div :style="{'background-color': getBoxRGBA(protanomalyColor)}" class="color-block">
 			<img :src='contrastIndicator(protanomalyColor)' alt="Contrast indicator" class="contrastTick" draggable="false">
-			<span :style="{'color': getTextRGBA(textColor)}" >{{ contrastRatio(textColor, alphaBlending(protanomalyColor)) }}</span>
+			<span :style="{'color': getTextRGBA(textColor)}" >{{ text }}</span>
 		</div>
 		<div :style="{'background-color': getBoxRGBA(protanopiaColor)}" class="color-block">
 			<img :src='contrastIndicator(protanopiaColor)' alt="Contrast indicator" class="contrastTick" draggable="false">
-			<span :style="{'color': getTextRGBA(textColor)}" >{{ contrastRatio(textColor, alphaBlending(protanopiaColor)) }}</span>
+			<span :style="{'color': getTextRGBA(textColor)}" >{{ text }}</span>
 		</div>
 		<div :style="{'background-color': getBoxRGBA(deuteranopiaColor)}" class="color-block">
 			<img :src='contrastIndicator(deuteranopiaColor)' alt="Contrast indicator" class="contrastTick" draggable="false">
-			<span :style="{'color': getTextRGBA(textColor)}" >{{ contrastRatio(textColor, alphaBlending(deuteranopiaColor)) }}</span>
+			<span :style="{'color': getTextRGBA(textColor)}" >{{ text }}</span>
 		</div>
 		<div :style="{'background-color': getBoxRGBA(tritanopiaColor)}" class="color-block">
 			<img :src='contrastIndicator(tritanopiaColor)' alt="Contrast indicator" class="contrastTick" draggable="false">
-			<span :style="{'color': getTextRGBA(textColor)}" >{{ contrastRatio(textColor, alphaBlending(tritanopiaColor)) }}</span>
+			<span :style="{'color': getTextRGBA(textColor)}" >{{ text }}</span>
 		</div>
 		<div :style="{'background-color': getBoxRGBA(tritanomalyColor)}" class="color-block">
 			<img :src='contrastIndicator(tritanomalyColor)' alt="Contrast indicator" class="contrastTick" draggable="false">
-			<span :style="{'color': getTextRGBA(textColor)}" >{{ contrastRatio(textColor, alphaBlending(tritanomalyColor)) }}</span>
+			<span :style="{'color': getTextRGBA(textColor)}" >{{ text }}</span>
 		</div>
     </div>
 </template>
