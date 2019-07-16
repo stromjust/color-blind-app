@@ -79,10 +79,11 @@
 				return outRGB;
 			},
 			contrastIndicator(colorBlock) {
-				if(this.contrastRatio(this.textColor, this.alphaBlending(colorBlock)) >= 7.0) {
+				let ratio = this.contrastRatio(this.textColor, this.alphaBlending(colorBlock));
+				if(ratio >= 7.0) {
 					return 'src/assets/tick.svg';
 				}
-				else if(this.contrastRatio(this.textColor, this.alphaBlending(colorBlock)) >= 4.5) {
+				else if(ratio >= 4.5) {
 					return 'src/assets/tick_yellow.svg';
 				}
 				else {

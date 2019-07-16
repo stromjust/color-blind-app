@@ -20,9 +20,9 @@
 
     export default {
         data: () => ({
-			colorColumnCount: 1,
+			colorColumnCount: 2,
 			colorColumnCountMax: 4,
-			text: 'color'
+			text: 'Any Text'
 		}),
         components: {
           'color-column': ColorColumn,
@@ -54,19 +54,20 @@
     }
 
 	.buttonContainer {
-		width: 45px;
+		margin-top: 5px;
+		width: 40px;
 	}
 
 	.colorButton {
-		margin: 0 5px;
-		filter: grayscale(.7);
+		width: 30px;
+		filter: grayscale(1);
 		user-select: none;
 		cursor: pointer;
 	}
 	.colorButton:hover {
-		filter: grayscale(0);
+		filter: grayscale(.5);
 	}
 	.colorButton:active {
-		filter: contrast(1.5);
+		filter: contrast(1);
 	}
 </style>

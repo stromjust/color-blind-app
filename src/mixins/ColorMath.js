@@ -169,7 +169,8 @@ export const ColorMath = {
 		contrastRatio(textColor, backgroundColor) {
 			let ratio = (this.relativeLuminance(textColor) + 0.05) /
 			 			(this.relativeLuminance(backgroundColor) + 0.05);
-			return (1 / ratio).toFixed(1);
+			if(ratio < 1) ratio = 1 / ratio;
+			return ratio.toFixed(1);
 		}
 
     }

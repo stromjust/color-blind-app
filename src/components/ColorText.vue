@@ -10,7 +10,7 @@
 
 	export default {
 		data: () => ({
-			text: 'color',
+			text: 'Any Text',
 		}),
 		methods: {
 			textChange(event) {
