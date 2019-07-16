@@ -20,7 +20,7 @@
 
     export default {
         data: () => ({
-			colorColumnCount: 2,
+			colorColumnCount: 4,
 			colorColumnCountMax: 4,
 			text: 'Any Text'
 		}),
