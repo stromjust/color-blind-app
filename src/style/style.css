@@ -1,6 +1,6 @@
 html, body {
-    margin: 0;
-    font-family: 'Cambria';
+  margin: 0;
+  font-family: 'Cambria';
 	color: #444343;
 	background-color: #fff;
 
@@ -11,18 +11,13 @@ html, body {
 }
 
 .appContainer {
+	width: 100%;
 	display: flex;
 	justify-content: center;
 }
 
 h1, h2 {
     font-weight: 400;
-}
-
-.header {
-    text-align: center;
-    overflow: auto;
-	margin-bottom: 20px;
 }
 
 .darkTheme {

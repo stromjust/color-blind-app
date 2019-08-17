@@ -1,73 +1,93 @@
 <template>
-    <div id="colorApp">
-        <info-column></info-column>
+<div id="color-blind-app">
 
-		<div class="buttonContainer">
-			<img @click="addColorColumn" src="./assets/plus.svg"
-					alt="Add color column" class="colorButton" draggable="false">
-			<img @click="removeColorColumn" src="./assets/minus.svg"
-					alt="Remove color column" class="colorButton" draggable="false">
+	<div class="header">
+		<div class="header__title">
+			<h1>help <strong>design</strong> web for accessibility</h1>
+			<h2>80 out of 1000 visitors will have <br><strong>harder time</strong> using your website</h2>
 		</div>
+		<div class="header__nav">
+			<router-link class="header__nav--button"
+									 tag="div"
+									 :to="{ name: 'Simulation'}">
+									 Simulation
+		 	</router-link>
+			<router-link class="header__nav--button"
+									 tag="div"
+									 :to="{ name: 'HowToUse'}">
+									 How to use
+			</router-link>
+			<router-link class="header__nav--button"
+									 tag="div"
+									 :to="{ name: 'HowItWorks'}">
+									 How it works
+		 	</router-link>
+		</div>
+	</div>
 
-        <color-column :text='text' v-for="column in colorColumnCount"></color-column>
-    </div>
+	<router-view></router-view>
+
+	</div>
+</div>
 </template>
 
 <script>
-    import ColorColumn from './components/ColorColumn.vue'
-    import InfoColumn from './components/InfoColumn.vue'
 	import { eventBus } from './main'
-
-    export default {
-        data: () => ({
-			colorColumnCount: 4,
-			colorColumnCountMax: 4,
-			text: 'Any Text'
-		}),
-        components: {
-          'color-column': ColorColumn,
-          'info-column': InfoColumn
-		},
-		methods: {
-			addColorColumn() {
-				if(this.colorColumnCount < this.colorColumnCountMax) {
-					this.colorColumnCount += 1;
-				}
-			},
-			removeColorColumn() {
-				if(this.colorColumnCount > 1) {
-					this.colorColumnCount -= 1;
-				}
-			}
-		},
-		created() {
-			eventBus.$on('textChanged', (text) => {
-				this.text = text;
-			});
-		}
-    }
 </script>
 
-<style>
-    #colorApp {
-        display: flex;
-    }
+<style lang="scss">
 
-	.buttonContainer {
-		margin-top: 5px;
-		width: 40px;
+	#color-blind-app {
+		display: flex;
+		flex-flow: column;
 	}
 
-	.colorButton {
-		width: 30px;
-		filter: grayscale(1);
-		user-select: none;
-		cursor: pointer;
+	.header {
+		display: flex;
+	  text-align: left;
+	  overflow: auto;
+		margin-bottom: 20px;
+
+		&__title {
+			margin-left: 10px;
+		}
+
+		&__nav {
+			display: flex;
+			align-items: center;
+			margin-left: auto;
+			margin-right: 75px;
+
+			&--button {
+				margin: 0 25px 0 25px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				cursor: pointer;
+				position: relative;
+			}
+
+			&--button::after {
+				position: absolute;
+				width: 100%;
+				bottom: -5px;
+				content: '';
+				height: 3px;
+				background-color: #696985;
+				transition: all .2s ease-out;
+				transform: scaleX(0);
+				opacity: 0;
+			}
+
+			&--button:hover::after {
+				transform: scaleX(1);
+				opacity: 1;
+			}
+		}
 	}
-	.colorButton:hover {
-		filter: grayscale(.5);
-	}
-	.colorButton:active {
-		filter: contrast(1);
+
+	.router-link-exact-active::after {
+		transform: scaleX(1);
+		opacity: .7;
 	}
 </style>

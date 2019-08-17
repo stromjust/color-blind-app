@@ -34,8 +34,8 @@
 
 <script>
     import { Chrome } from 'vue-color'
-    import { ColorMath } from '../mixins/ColorMath.js'
-	import { eventBus } from '../main'
+    import { ColorMath } from '../../mixins/ColorMath.js'
+		import { eventBus } from '../../main'
 
     export default {
         data:() => ({

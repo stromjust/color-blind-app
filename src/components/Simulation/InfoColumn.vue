@@ -67,7 +67,7 @@
 </template>
 
 <script>
-	import { eventBus } from '../main'
+	import { eventBus } from '../../main'
 	import ThemeSwitch from './ThemeSwitch.vue'
 	import ColorText from './ColorText.vue'
 	import { Material } from 'vue-color'

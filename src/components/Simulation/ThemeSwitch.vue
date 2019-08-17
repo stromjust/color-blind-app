@@ -8,7 +8,7 @@
 
 </template>
 <script>
-	import { eventBus } from '../main'
+	import { eventBus } from '../../main'
 
 	export default {
 		data: () => ({
@@ -29,6 +29,9 @@
 				let color = getComputedStyle(document.querySelector('body')).backgroundColor;
 				eventBus.$emit('backgroundChanged', color);
 			}
+		},
+		beforeDestroy() {
+		  document.body.className = '';
 		}
 	}
 </script>
