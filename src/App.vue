@@ -4,8 +4,9 @@
 	<div class="header">
 		<div class="header__title">
 			<h1>help <strong>design</strong> web for accessibility</h1>
-			<h2>80 out of 1000 visitors will have <br><strong>harder time</strong> using your website</h2>
+			<h2>45 out of 1000 visitors will have <br><strong>harder time</strong> using your website</h2>
 		</div>
+
 		<div class="header__nav">
 			<router-link class="header__nav--button"
 									 tag="div"
@@ -16,6 +17,11 @@
 									 tag="div"
 									 :to="{ name: 'HowToUse'}">
 									 How to use
+			</router-link>
+			<router-link class="header__nav--button"
+									 tag="div"
+									 :to="{ name: 'WhyUseIt'}">
+									 Why use it
 			</router-link>
 			<router-link class="header__nav--button"
 									 tag="div"
@@ -37,14 +43,19 @@
 
 <style lang="scss">
 
+	html {
+		margin-left: calc(100vw - 100%);
+	}
+
 	#color-blind-app {
 		display: flex;
 		flex-flow: column;
+		width: 1235px;
+		margin-bottom: 50px;
 	}
 
 	.header {
 		display: flex;
-	  text-align: left;
 	  overflow: auto;
 		margin-bottom: 20px;
 
