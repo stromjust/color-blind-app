@@ -43,8 +43,8 @@
 
 <style lang="scss">
 
-	html {
-		margin-left: calc(100vw - 100%);
+	body {
+		padding-left: calc(100vw - 100%);
 	}
 
 	#color-blind-app {
